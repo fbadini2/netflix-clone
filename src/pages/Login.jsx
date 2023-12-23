@@ -8,8 +8,15 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  const handlFormSubmit = (e) => {
+    e.preventDefault()
+    console.log(email)
+    console.log(password)
+  }
+
 
   return (
+    
     <>
       <div className="w-full h-screen">
         <img
@@ -22,29 +29,34 @@ const Login = () => {
           <div className="max-w-[470px] h-[600px] mx-auto bg-black/70 rounded-lg">
             <div className="max-w-[320px] mx-auto py-16">
               <h1 className="text-3xl font-nsans-bold">Login</h1>
-              <form className="w-full flex flex-col py-4">
+              <form onSubmit={handlFormSubmit} className="w-full flex flex-col py-4">
                 <input
                   className="p-3 my-2 rounded bg-gray-700"
                   type="email"
                   placeholder="email"
                   autoComplete="email"
                   value={email}
-                  onChange={(e)=> e.target.value}
-                ></input>
+                  onChange={(e)=> setEmail(e.target.value)}
+                />
                 <input
                   className="p-3 my-2 rounded bg-gray-700"
                   type="password"
                   placeholder="password"
                   value={password}
-                  onChange={(e)=> e.target.value}
+                  onChange={(e)=> setPassword(e.target.value)}
                   autoComplete="current-password"
-                ></input>
+                />
                 <button className="bg-red-600 py-3 my-6 rounded font-nsans-bold">
                   Login
                 </button>
                 <div className="flex justify-between items-center text-gray-600">
                 <p>
-                  <input type='checkbox' className='mr-2'checked={rememberLogin} onChange={(e) => SetRemeberLogin(!rememberLogin)}/>Remember me
+                  <input 
+                    type="checkbox" 
+                    className='mr-2'
+                    checked={rememberLogin} 
+                    onChange={(e) => SetRemeberLogin(!rememberLogin)}
+                  />Remember me
                 </p>
                 <p>Need Help?</p>
                 </div>
