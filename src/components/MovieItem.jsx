@@ -1,7 +1,7 @@
 import React from 'react'
 import { createImageUrl } from '../services/movieService';
 import { FaHeart, FaRegHeart} from 'react-icons/fa'
-import {MdChevronLeft, MdChevronRight} from 'react-icons/md'
+
 
 const MovieItem = ({movie}) => {
     const {title, backdrop_path, poster_path} = movie;
