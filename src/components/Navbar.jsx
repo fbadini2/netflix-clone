@@ -41,9 +41,9 @@ const Navbar = () => {
                 <button className='capitalize bg-red-600 px-6 py-2 rounded cursor-pointer'>sign up</button>
             </Link>
         </div>
-    )};
+    )}
     </div>
-  );
+  )
 };
 
 export default Navbar
